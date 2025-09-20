@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import "./index.css";
 
+// ✅ Import images from src/assets
+import cover from "./assets/cover.png";
+import applebooks from "./assets/applebooks.png";
+
 // --- Shuffle helper ---
 function shuffleArray(array) {
   return [...array].sort(() => Math.random() - 0.5);
@@ -55,7 +59,6 @@ const compQuestions = [
 
 // --- Cloze Questions (20 total) ---
 const clozeQuestions = [
-  // Part 1
   { sentence: "The surface of Earth is in a state of _____ change because it is always being shaped by natural forces.", options: ["constant", "collapse", "structure"], answer: "constant" },
   { sentence: "Weathering and erosion are examples of a natural _____ that slowly changes the Earth.", options: ["process", "landslide", "community"], answer: "process" },
   { sentence: "Strong winds and water can _____ landforms, changing their shape over time.", options: ["alter", "effect", "eruption"], answer: "alter" },
@@ -66,8 +69,6 @@ const clozeQuestions = [
   { sentence: "The damage from the earthquake caused a major _____ in the city.", options: ["crisis", "constant", "surface"], answer: "crisis" },
   { sentence: "A tsunami can be a dangerous _____ to people living near the ocean.", options: ["hazard", "community", "structure"], answer: "hazard" },
   { sentence: "A volcanic eruption can cause great _____ to buildings and land.", options: ["destruction", "weathering", "warning"], answer: "destruction" },
-
-  // Part 2
   { sentence: "The damage from the landslide was so _____ that entire buildings were buried.", options: ["severe", "gradual", "community"], answer: "severe" },
   { sentence: "Emergency workers helped people _____ the area after the volcano erupted.", options: ["evacuate", "prevent", "contrast"], answer: "evacuate" },
   { sentence: "A landslide can happen suddenly because it is a very _____ event.", options: ["swift", "gradual", "structure"], answer: "swift" },
@@ -154,14 +155,14 @@ export default function App() {
       <h1>🌎 A World of Change Review</h1>
 
       {section === "menu" && (
-        <><div className="photo-block">
-  <img src="/cover.png" alt="A World of Change Cover" className="teacher-photo" />
-</div>
-
+        <>
+          <div className="photo-block">
+            <img src={cover} alt="A World of Change Cover" className="teacher-photo" />
+          </div>
 
           <div className="welcome-row">
             <p className="welcome-text">Welcome! Choose a section below to start practicing your skills. Have fun learning!</p>
-            <img src="/applebooks.png" alt="Apple and Books" className="apple-books" />
+            <img src={applebooks} alt="Apple and Books" className="apple-books" />
           </div>
 
           <div className="menu-buttons">
